@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="911 dispatcher number and letter memory practice">
+  <title>911 Dispatcher Memory Trainer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Recall Practice</p>
+        <h1>911 Dispatcher Memory Trainer</h1>
+        <p class="subtitle">
+          Build your ability to remember numbers, letters, and mixed sequences.
+        </p>
+      </div>
+
+      <section class="scoreboard" aria-label="Score">
+        <div><span>Correct</span><strong id="correctScore">0</strong></div>
+        <div><span>Attempts</span><strong id="attemptScore">0</strong></div>
+        <div><span>Accuracy</span><strong id="accuracyScore">0%</strong></div>
+      </section>
+    </header>
+
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Settings</p>
+          <h2>Choose your difficulty</h2>
+        </div>
+        <button id="resetScore" class="button secondary" type="button">Reset score</button>
+      </div>
+
+      <div class="settings-grid">
+        <label>
+          <span>Sequence type</span>
+          <select id="sequenceType">
+            <option value="numbers">Numbers</option>
+            <option value="letters">Letters</option>
+            <option value="mixed">Letters and numbers</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Sequence length</span>
+          <div class="range-row">
+            <input id="sequenceLength" type="range" min="2" max="20" value="4">
+            <output id="lengthOutput">4</output>
+          </div>
+        </label>
+
+        <label>
+          <span>Display time</span>
+          <select id="displayTime">
+            <option value="1000">1 second</option>
+            <option value="2000" selected>2 seconds</option>
+            <option value="3000">3 seconds</option>
+            <option value="5000">5 seconds</option>
+            <option value="0">Until I hide it</option>
+          </select>
+        </label>
+
+        <label class="checkbox">
+          <input id="allowRepeats" type="checkbox" checked>
+          <span>Allow repeated characters</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card trainer-card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Exercise</p>
+          <h2 id="exerciseTitle">Ready to begin?</h2>
+        </div>
+        <span id="statusBadge" class="badge">Ready</span>
+      </div>
+
+      <div class="sequence-box" aria-live="polite">
+        <p id="instruction">Press “Start round” to reveal a sequence.</p>
+        <div id="sequenceDisplay" class="sequence">••••</div>
+        <button id="hideSequence" class="button secondary hidden" type="button">
+          Hide sequence
+        </button>
+      </div>
+
+      <form id="answerForm">
+        <label>
+          <span>Type the sequence from memory</span>
+          <input
+            id="answerInput"
+            type="text"
+            maxlength="20"
+            placeholder="Your answer"
+            autocomplete="off"
+            autocapitalize="characters"
+            spellcheck="false"
+            disabled
+          >
+        </label>
+
+        <div class="button-row">
+          <button id="startRound" class="button primary" type="button">Start round</button>
+          <button id="checkAnswer" class="button success" type="submit" disabled>
+            Check answer
+          </button>
+          <button id="nextRound" class="button primary hidden" type="button">
+            Next round
+          </button>
+        </div>
+      </form>
+
+      <div id="feedback" class="feedback hidden" role="status"></div>
+    </section>
+
+    <section class="card tip-card">
+      <p class="eyebrow">Practice tip</p>
+      <p id="tipText">
+        Start with short sequences and increase the length once you can recall them consistently.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
