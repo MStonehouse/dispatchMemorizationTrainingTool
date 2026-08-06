@@ -6,7 +6,7 @@ A responsive memory-practice website built with plain HTML, CSS, and JavaScript.
 
 - Number, letter, and mixed letter/number sequences
 - Adjustable sequence length from 2 to 20 characters
-- Sequence automatically disappears after 1, 2, 3, or 5 seconds
+- Sequence automatically disappears after 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, or 12 seconds
 - Optional manual “Hide sequence” mode
 - Optional repeated characters
 - Correct answers, attempts, and accuracy tracking
